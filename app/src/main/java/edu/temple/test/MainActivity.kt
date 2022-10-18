@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import org.w3c.dom.Text
 
-class MainActivity : AppCompatActivity(), SizeFragment.ValueChangeInterface {
+class MainActivity : AppCompatActivity(){
 
     lateinit var textFragment: TextFragment
 
@@ -31,11 +31,6 @@ class MainActivity : AppCompatActivity(), SizeFragment.ValueChangeInterface {
             textFragment = supportFragmentManager.findFragmentById(R.id.container_2) as TextFragment
         }
 
-    }
-
-    override fun onChange(value: Int) {
-        // Change text size
-        textFragment.changeTextSize(value.toFloat())
     }
 
 }

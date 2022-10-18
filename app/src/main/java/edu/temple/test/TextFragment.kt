@@ -26,8 +26,7 @@ class TextFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_text, container, false).apply {
             textView = findViewById(R.id.textView)
             textViewModel.getTextSize().observe(requireActivity()) {
-                if (::textView.isInitialized)
-                    textView.textSize = it.toFloat()
+                changeTextSize(it.toFloat())
             }
         }
     }
